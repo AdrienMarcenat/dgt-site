@@ -1,5 +1,66 @@
+{% load static %}
 
-{% for article in object_list %}
+<head>	
+	
+	<!--Page Title-->		
+    <title>DGT | Liste des articles</title>
 
+	<!--Referencement-->
+	<meta name="robots" content="all" />
+	<meta name="keywords" content="DiceGameTech, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+    <meta name="description" content="{% article.contents %}" />
+	<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
+				
+    {% static css/article.css %}
+	<link href="/static/article.css" rel="stylesheet" type="text/css" />
+		
+</head>	
 
-{% endfor %}
+<body>
+	<div id="main">
+
+		<div id="banner">
+			<div class="centered">
+					
+                {% static img/banner %}
+				<img src="/static/img/banner.png" alt="DiceGameTech" usemap="#logomap" />
+					
+				<map name="logomap"><area shape="rect" coords="0,0,400,100" alt="DiceGameTech" href="/" /></map>
+				
+            </div>
+        </div>
+
+        <div id="article_list">
+            <div class="lightboxable">
+                <h1>Liste des articles publiés</h1>
+
+                <ul>
+                    { for article in object_list %}
+                    <li><a href="{% article_url %}">{% article.name %}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div id="footer">
+
+                <div class="content">
+                    <div class="column">
+                        <b>A propos de DGT</b>
+                        <ul>
+                            <li><a href="/article/index">Index des articles</a></li>
+                            <li><a href="/article/authors">Auteurs réguliers</a></li>
+                            <li><a href="/article/use">Conditions d'utilisation</a></li>
+                        </ul>
+                    </div>
+                    <div class="column">
+                        <b>Contact</b>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
