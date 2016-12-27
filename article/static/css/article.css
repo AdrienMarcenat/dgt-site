@@ -1,0 +1,625 @@
+/*Palette*/
+/*Values*/
+/*IE stupidness (for imagemap)*/
+img {
+  border: 0px;
+}
+
+/*Fonts*/
+@font-face {
+  font-family: 'Museo100';
+  src: url('http://www.lesforges.org/static/css/fonts/museo100-regular-webfont.eot');
+  src: url('http://www.lesforges.org/static/css/fonts/museo100-regular-webfont.eot?#iefix') format('embedded-opentype'), url('http://www.lesforges.org/static/css/fonts/museo100-regular-webfont.woff') format('woff'), url('http://www.lesforges.org/static/css/fonts/museo100-regular-webfont.ttf') format('truetype'), url('http://www.lesforges.org/static/css/fonts/museo100-regular-webfont.svg#Museo100') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Museo300';
+  src: url('http://www.lesforges.org/static/css/fonts/museo300-regular-webfont.eot');
+  src: url('http://www.lesforges.org/static/css/fonts/museo300-regular-webfont.eot?#iefix') format('embedded-opentype'), url('http://www.lesforges.org/static/css/fonts/museo300-regular-webfont.woff') format('woff'), url('http://www.lesforges.org/static/css/fonts/museo300-regular-webfont.ttf') format('truetype'), url('http://www.lesforges.org/static/css/fonts/museo300-regular-webfont.svg#Museo300') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/*Mixins*/
+.icon {
+  position: relative;
+  top: 2px;
+  margin-right: 4px;
+}
+/*Site structure*/
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  font-family: Cambria, Georgia, "Times New Roman", Times, serif;
+  line-height: 150%;
+  color: #333333;
+}
+#main {
+  width: 980px;
+  height: 100%;
+  margin: auto;
+}
+/*Dont center this with margin:auto. It has to be float so that content gets all the body height*/
+#banner {
+  float: right;
+  position: relative;
+  left: -50%;
+  font-size: 0em;
+  line-height: 0%;
+}
+#banner .centered {
+  float: left;
+  width: 978px;
+  height: 86px;
+  position: relative;
+  left: 50%;
+  margin-bottom: 24px;
+  box-shadow: 0px 0px 5px #aaaaaa;
+  -moz-box-shadow: 0px 0px 5px #aaaaaa;
+  -webkit-box-shadow: 0px 0px 5px #aaaaaa;
+}
+#profile_area {
+  z-index: 1;
+  float: right;
+  position: absolute;
+  top: 6px;
+  right: 19px;
+  min-width: 160px;
+  color: #FFFFFF;
+  font-family: 'Museo300', Verdana;
+  font-size: 16px;
+  line-height: 0%;
+  border-bottom: 1px solid #FFFFFF;
+}
+#profile_area img {
+  margin-right: 6px;
+  border: 1px solid #FFFFFF;
+  border-bottom: none;
+  vertical-align: middle;
+}
+#profile_area a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+#profile_area a.dropdown {
+  display: block;
+}
+#profile_area #menu {
+  display: none;
+  margin: 0px;
+  padding: 4px;
+  color: #333333;
+  line-height: 100%;
+  list-style-type: none;
+  background-color: #FFFFFF;
+  box-shadow: 0px 0px 5px #aaaaaa;
+  -moz-box-shadow: 0px 0px 5px #aaaaaa;
+  -webkit-box-shadow: 0px 0px 5px #aaaaaa;
+}
+#profile_area #menu a {
+  color: #333333;
+}
+#profile_area #menu a:hover {
+  color: #1F8CE9;
+}
+#profile_area #menu li {
+  margin: 4px;
+  border-bottom: 1px solid #cacaca;
+}
+#social {
+  z-index: 0;
+  float: right;
+  position: absolute;
+  bottom: 6px;
+  right: 19px;
+}
+#social img {
+  margin-left: 2px;
+}
+#social .levelup {
+  position: relative;
+  right: 2px;
+  top: 3px;
+}
+#content {
+  width: 940px;
+  min-height: 100%;
+  margin: auto;
+  margin-bottom: -7px;
+  padding-left: 18px;
+  padding-right: 18px;
+  border-left: 1px solid #cacaca;
+  border-right: 1px solid #cacaca;
+  box-shadow: 0px 0px 5px #aaaaaa;
+  -moz-box-shadow: 0px 0px 5px #aaaaaa;
+  -webkit-box-shadow: 0px 0px 5px #aaaaaa;
+}
+/*hr*/
+hr {
+  clear: left;
+  height: 1px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  color: #FFFFFF;
+  background-color: #FFFFFF;
+  border: 1px dotted #cacaca;
+  border-style: none none dotted none;
+}
+hr.heavy {
+  width: 976px;
+  height: 2px;
+  margin: 0px;
+  margin-bottom: 36px;
+  margin-left: -18px;
+  color: #FFFFFF;
+  background-color: #FFFFFF;
+  border: none;
+  border-top: 1px solid #cacaca;
+  border-style: solid none none none;
+  box-shadow: 0px 2px 6px #cacaca;
+  -moz-box-shadow: 0px 2px 6px #cacaca;
+  -webkit-box-shadow: 0px 2px 6px #cacaca;
+}
+/*hr height in Chrome and Safari*/
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+  hr.heavy {
+    height: 1px;
+  }
+}
+/*Spotlights*/
+#spotlights {
+  font-size: 0em;
+  line-height: 0%;
+}
+#spotlights > a {
+  margin-left: 20px;
+}
+#spotlights > a:first-child {
+  margin-left: 0px;
+}
+#spotlights img {
+  margin-bottom: 24px;
+  padding: 7px;
+  border: 1px solid #cacaca;
+  box-shadow: 0 2px 5px #dddddd;
+  -moz-box-shadow: 0 2px 5px #dddddd;
+  -webkit-box-shadow: 0 2px 5px #dddddd;
+}
+#spotlights a {
+  text-decoration: none;
+}
+/*Base*/
+th {
+  text-align: right;
+}
+h1 {
+  margin: 0px;
+  font-size: 2em;
+  line-height: .75em;
+  font-weight: bold;
+}
+h1 a {
+  color: #333333;
+  text-decoration: none;
+}
+h2 {
+  margin: 0px;
+  font-size: 1.375em;
+  line-height: 1.0909em;
+}
+a {
+  border: none;
+  color: #BA0009;
+}
+a:hover {
+  color: #1F8CE9;
+}
+a img {
+  border: none;
+}
+.clear {
+  clear: both;
+}
+/*Navigation*/
+#right_column {
+  float: right;
+  width: 300px;
+  margin-bottom: 120px;
+}
+#right_column h2 {
+  font-family: 'Museo300', Verdana;
+  color: #BA0009;
+}
+#right_column .loupe {
+  font-size: 0px;
+  line-height: 0%;
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 7px;
+  border: 1px solid #cacaca;
+}
+#right_column .loupe object {
+  outline: none;
+}
+#right_column .loupe_help {
+  line-height: 120%;
+  font-family: 'Museo300', Verdana;
+  text-align: center;
+}
+#right_column .loupe_help .source {
+  font-size: .8em;
+}
+#archives {
+  margin-top: 12px;
+  margin-top: 12px;
+}
+#archives > ul > li > a {
+  color: #333333;
+  text-decoration: none;
+}
+#archives > ul > li > a:hover {
+  color: #1F8CE9;
+}
+#archives ul {
+  margin-top: 0px;
+  padding-left: 24px;
+}
+#archives ul ul {
+  padding-left: 12px;
+}
+#archives ul li ul {
+  display: none;
+}
+#tags_cloud {
+  margin-top: 12px;
+  margin-bottom: 24px;
+  text-align: left;
+  font-family: 'Museo100', Verdana;
+}
+#tags_cloud a {
+  color: #333333;
+  text-decoration: none;
+}
+#tags_cloud a:hover {
+  color: #1F8CE9;
+}
+#latest_comments {
+  margin-top: 12px;
+  margin-bottom: 24px;
+  line-height: 0%;
+}
+#latest_comments .comment {
+  line-height: 100%;
+  display: block;
+  padding: 6px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: #333333;
+  text-decoration: none;
+  background-color: #f4f4f4;
+}
+#latest_comments .comment:nth-child(odd) {
+  background-color: #fafafa;
+}
+#latest_comments .comment:hover {
+  color: #1F8CE9;
+}
+#latest_comments .meta {
+  font-size: .8em;
+  line-height: 100%;
+}
+#latest_comments .avatar {
+  float: left;
+  background-color: #FFFFFF;
+  border: 1px solid #CACACA;
+  margin-right: 6px;
+  padding: 2px;
+}
+#latest_comments .infos {
+  margin-left: 42px;
+}
+/*Articles*/
+#left_column {
+  float: left;
+  width: 620px;
+  overflow: hidden;
+  margin-bottom: 120px;
+}
+#left_column .center {
+  text-align: center;
+  margin-left: -12px;
+  margin-right: -12px;
+}
+#left_column img {
+  padding: 12px;
+  border: 1px solid #cacaca;
+  margin-left: 12px;
+  margin-right: 12px;
+  max-width: 594px;
+  box-shadow: 0 2px 5px #dddddd;
+  -moz-box-shadow: 0 2px 5px #dddddd;
+  -webkit-box-shadow: 0 2px 5px #dddddd;
+}
+#left_column blockquote {
+  font-style: italic;
+  border-left: 2px solid #cacaca;
+  margin-left: 24px;
+  padding-left: 24px;
+}
+#left_column p {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+#left_column ul {
+  list-style-type: circle;
+}
+#left_column li img {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+.compact_container {
+  background-color: #f4f4f4;
+}
+.compact_container:nth-child(odd) {
+  background-color: #fafafa;
+}
+.compact_container a {
+  text-decoration: none;
+}
+.compact_container .compact {
+  padding: 4px;
+  cursor: pointer;
+  color: #333333;
+}
+.compact_container .compact:hover {
+  padding: 8px;
+  padding-left: 4px;
+  font-size: 1.25em;
+  font-weight: bolder;
+  color: #FFFFFF;
+  background-color: #BA0009;
+}
+.meta {
+  font-family: 'Museo300', Verdana;
+  font-size: .8em;
+  margin: 12px;
+  margin-left: 0px;
+  line-height: 1.875em;
+}
+.read_more {
+  font-family: 'Museo100', Verdana;
+}
+.disclaimer {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  padding: 12px;
+  font-style: italic;
+  border: 1px dashed #cacaca;
+  background-color: #fafafa;
+}
+.previous_articles {
+  float: left;
+  margin-top: 48px;
+  text-decoration: none;
+}
+.next_articles {
+  float: left;
+  margin-top: 48px;
+  text-decoration: none;
+  float: right;
+  border-right: 0px;
+  padding-right: 0px;
+}
+#article h1,
+#article h2,
+#article h3,
+#article h4,
+#article h5,
+#article h6 {
+  margin: 0px;
+  margin-bottom: 24px;
+}
+#article h1 + .meta {
+  margin-top: -12px;
+}
+#article .sequel {
+  text-align: right;
+}
+#article .share {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+#article_content h1 {
+  line-height: 1.25em;
+  border-bottom: 2px solid #cacaca;
+}
+#article_content h1 + p,
+#article_content h2 + p,
+#article_content h3 + p,
+#article_content h4 + p,
+#article_content h5 + p,
+#article_content h6 + p {
+  margin-top: -12px;
+}
+#article_comments {
+  line-height: 0%;
+}
+#article_comments h1 {
+  border: none;
+}
+#article_comments .comment {
+  line-height: 150%;
+  padding: 12px;
+  border-top: 2px solid #cacaca;
+  background-color: #fafafa;
+  margin-bottom: 12px;
+}
+#article_comments .comment label {
+  text-align: left;
+}
+#article_comments .comment .comment_actions {
+  font-family: 'Museo300', Verdana;
+  font-size: .8em;
+  text-align: right;
+  margin-top: 24px;
+}
+#article_comments .comment .comment_actions a {
+  margin-left: 12px;
+  color: #333333;
+  text-decoration: none;
+}
+#article_comments .comment .comment_actions .edit:before {
+  content: url('http://www.lesforges.org/static/css/img/edit.png');
+  position: relative;
+  top: 2px;
+  margin-right: 4px;
+}
+#article_comments .comment .comment_actions .delete:before {
+  content: url('http://www.lesforges.org/static/css/img/delete.png');
+  position: relative;
+  top: 2px;
+  margin-right: 4px;
+}
+#article_comments .comment .comment_actions .restore:before {
+  content: url('http://www.lesforges.org/static/css/img/restore.png');
+  position: relative;
+  top: 2px;
+  margin-right: 4px;
+}
+#article_comments .comment .helptext {
+  font-family: 'Museo300', Verdana;
+  font-size: .8em;
+}
+#article_comments .comment .helptext a {
+  color: #BA0009;
+}
+#article_comments .comment .helptext a:hover {
+  color: #1F8CE9;
+}
+#article_comments .avatar {
+  float: left;
+  margin-top: 0px;
+  margin-left: 0px;
+  margin-right: 12px;
+  padding: 4px;
+  border: 1px solid #cacaca;
+  background-color: #FFFFFF;
+}
+#article_comments .comment_content {
+  margin-left: 72px;
+}
+#article_comments p {
+  margin-top: 0px;
+}
+#article_comments textarea {
+  resize: vertical;
+  width: 586px;
+}
+#article_comments .edit_comment_form  textarea {
+  width: 514px;
+}
+#article_comments .submit {
+  text-align: center;
+  font-family: 'Museo300', Verdana;
+}
+/*Login popup*/
+.popup {
+  box-shadow: 0px 5px 5px #aaaaaa;
+  -moz-box-shadow: 0px 5px 5px #aaaaaa;
+  -webkit-box-shadow: 0px 5px 5px #aaaaaa;
+}
+.popup p {
+  clear: left;
+}
+.popup label {
+  display: block;
+  float: left;
+  width: 160px;
+  margin-bottom: 12px;
+}
+.popup #password_form label {
+  width: 180px;
+}
+.popup .helptext {
+  display: block;
+  margin-left: 160px;
+  font-size: 12px;
+}
+.popup .helptext a {
+  color: #BA0009;
+}
+.popup .helptext a:hover {
+  color: #1F8CE9;
+}
+.popup #password_form .helptext {
+  margin-left: 180px;
+}
+.errorlist {
+  margin-top: 24px;
+  padding: 0px;
+  color: #BA0009;
+  border-top: 1px dotted #cacaca;
+  border-bottom: 1px dotted #cacaca;
+}
+.errorlist li {
+  list-style-type: none;
+}
+.errorlist li:before {
+  content: url('http://www.lesforges.org/static/css/img/form_error.png');
+  position: relative;
+  top: 2px;
+  margin-right: 4px;
+}
+.form_complete p {
+  margin: 0px;
+}
+.form_complete p:before {
+  content: url('http://www.lesforges.org/static/css/img/form_ok.png');
+  position: relative;
+  top: 2px;
+  margin-right: 4px;
+}
+/*Footer*/
+#footer {
+  clear: both;
+  padding: 24px;
+  font-family: 'Museo300', Verdana;
+  font-size: .8em;
+  line-height: 140%;
+  background-color: #fafafa;
+}
+#footer .content {
+  width: 960px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+}
+#footer .column {
+  float: left;
+  width: 219px;
+  padding-bottom: 12px;
+  padding-left: 20px;
+  border-left: 1px dotted #cacaca;
+}
+#footer .column:first-child {
+  padding-left: 0px;
+  border-left: none;
+}
+#footer ul {
+  float: left;
+  padding-left: 24px;
+  line-height: 220%;
+  list-style-type: none;
+}
+#footer a {
+  color: #333333;
+  text-decoration: none;
+}
+#footer a:hover {
+  color: #1F8CE9;
+}
+
