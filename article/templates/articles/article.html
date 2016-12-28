@@ -12,7 +12,7 @@
     <meta name="description" content="{{ article.contents }}" />
 	<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
 				
-	<link href="{% static css/article.css %}" rel="stylesheet" type="text/css" />
+	<link href="../../static/css/article.css" rel="stylesheet" type="text/css" />
 		
 </head>	
 
@@ -29,8 +29,8 @@
             </div>
         </div>
 
-        <div id="article">
-            <div class="lightboxable">
+        <div id="content">
+            <div id="left_column">
                 <h1>{{ article.title }}</h1>
                 <h2>{{ article.subtitle }}</h2>
 
@@ -52,35 +52,34 @@
 
             </div>
 
-            <h2>Archives</h2>
-            <div id="archives">
+            <div id="right_column"> 
+                <h2>Archives</h2>
+                <div id="archives">
+                    <ul>
+                        {% for article in article_list %}
+                        <li><a href="{% url article:authors %}">{{ article.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+
+        <div class="content">
+            <div class="column">
+                <b>A propos de DGT</b>
                 <ul>
-                    {% for article in article_list %}
-                    <li><a href="{% url article:authors %}">{{ article.title }}</a></li>
-                    {% endfor %}
+                    <li><a href="{% url article:list %}">Index des articles</a></li>
+                    <li><a href="{% url authors:list %}">Auteurs réguliers</a></li>
+                    <li><a href="{% url dicegametech:use %}">Conditions d'utilisation</a></li>
                 </ul>
             </div>
-
-            <div id="footer">
-
-                <div class="content">
-                    <div class="column">
-                        <b>A propos de DGT</b>
-                        <ul>
-                            <li><a href="{% url article:list %}">Index des articles</a></li>
-                            <li><a href="{% url authors:list %}">Auteurs réguliers</a></li>
-                            <li><a href="{% url dicegametech:use %}">Conditions d'utilisation</a></li>
-                        </ul>
-                    </div>
-                    <div class="column">
-                        <b>Contact</b>
-                    </div>
-                </div>
-
+            <div class="column">
+                <b>Contact</b>
             </div>
-
         </div>
 
     </div>
-
 </body>
