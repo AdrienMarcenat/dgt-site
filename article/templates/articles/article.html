@@ -1,6 +1,4 @@
 {% load static %}
-{% static img/banner %}
-{% static css/article.css %}
 
 <head>	
 	
@@ -14,7 +12,7 @@
     <meta name="description" content="{{ article.contents }}" />
 	<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
 				
-	<link href="/static/article.css" rel="stylesheet" type="text/css" />
+	<link href="{% static css/article.css %}" rel="stylesheet" type="text/css" />
 		
 </head>	
 
@@ -24,7 +22,7 @@
 		<div id="banner">
 			<div class="centered">
 					
-				<img src="/static/img/banner.png" alt="DiceGameTech" usemap="#logomap" />
+				<img src="{% static img/banner %}"  alt="DiceGameTech" usemap="#logomap" />
 					
 				<map name="logomap"><area shape="rect" coords="0,0,400,100" alt="DiceGameTech" href="/" /></map>
 				
