@@ -1,18 +1,19 @@
 {% load static %}
+{% static img/banner %}
+{% static css/article.css %}
 
 <head>	
 	
 	<!--Page Title-->		
-    <title>DGT | {% article.title %}</title>
+    <title>DGT | {{ article.title }}</title>
 
 	<!--Referencement-->
 	<meta name="robots" content="all" />
-    <meta name="authors" content="{% article.authors %}" />
+    <meta name="authors" content="{{ article.authors }}" />
 	<meta name="keywords" content="DiceGameTech, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
-    <meta name="description" content="{% article.contents %}" />
+    <meta name="description" content="{{ article.contents }}" />
 	<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
 				
-    {% static css/article.css %}
 	<link href="/static/article.css" rel="stylesheet" type="text/css" />
 		
 </head>	
@@ -23,7 +24,6 @@
 		<div id="banner">
 			<div class="centered">
 					
-                {% static img/banner %}
 				<img src="/static/img/banner.png" alt="DiceGameTech" usemap="#logomap" />
 					
 				<map name="logomap"><area shape="rect" coords="0,0,400,100" alt="DiceGameTech" href="/" /></map>
@@ -33,19 +33,19 @@
 
         <div id="article">
             <div class="lightboxable">
-                <h1>{% article.title %}</h1>
-                <h2>{% article.subtitle %}</h2>
+                <h1>{{ article.title }}</h1>
+                <h2>{{ article.subtitle }}</h2>
 
                 <div class="meta">
-                    Par <a href="/article/auteurs">{% article.authors %}</a> | le {% article.pub_date %} 				
+                    Par <a href="/article/auteurs">{{ article.authors }}</a> | le {{ article.pub_date }}	
                 </div>
 
                 <div id="article_slug">
-                    <p>{% article.slug %}</p>
+                    <p>{{ article.slug }}</p>
                 </div>
 
                 <div id="article_content">
-                    <p>{% article.contents %}</p>
+                    <p>{{ article.contents }}</p>
                 </div>
 
                 <div id="article_comments">
@@ -57,8 +57,8 @@
             <h2>Archives</h2>
             <div id="archives">
                 <ul>
-                    { for article in obj_list %}
-                    <li><a href="{% article_url %}">{% article.name %}</a></li>
+                    {% for article in article_list %}
+                    <li><a href="{% url article:authors %}">{{ article.title }}</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -69,9 +69,9 @@
                     <div class="column">
                         <b>A propos de DGT</b>
                         <ul>
-                            <li><a href="/article/index">Index des articles</a></li>
-                            <li><a href="/article/authors">Auteurs réguliers</a></li>
-                            <li><a href="/article/use">Conditions d'utilisation</a></li>
+                            <li><a href="{% url article:list %}">Index des articles</a></li>
+                            <li><a href="{% url authors:list %}">Auteurs réguliers</a></li>
+                            <li><a href="{% url dicegametech:use %}">Conditions d'utilisation</a></li>
                         </ul>
                     </div>
                     <div class="column">
