@@ -20,8 +20,14 @@ class Article(models.Model):
 
     contents = models.TextField(verbose_name=_('contents')) 
 
+    def __str__(self):
+        return self.title
+
 
 class User(models.Model):
    
     firstname = models.CharField(max_length=256, verbose_name=_('firstname'))
     lastname  = models.CharField(max_length=256, verbose_name=_('lastname'))
+    
+    def __str__(self):
+        return self.lastname
