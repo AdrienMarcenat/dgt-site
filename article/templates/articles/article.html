@@ -12,7 +12,7 @@
     <meta name="description" content="{{ article.contents }}" />
 	<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
 				
-    <link href="{% static ../../static/css/article.css %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/article.css' %}" rel="stylesheet" type="text/css" />
 		
 </head>	
 
@@ -22,7 +22,7 @@
 		<div id="banner">
 			<div class="centered">
 					
-				<img src="{% static img/banner %}"  alt="DiceGameTech" usemap="#logomap" />
+				<img src="{% static 'img/banner' %}"  alt="DiceGameTech" usemap="#logomap" />
 					
 				<map name="logomap"><area shape="rect" coords="0,0,400,100" alt="DiceGameTech" href="/" /></map>
 				
@@ -57,7 +57,7 @@
                 <div id="archives">
                     <ul>
                         {% for article in article_list %}
-                        <li><a href="{% url article:authors %}">{{ article.title }}</a></li>
+                        <li><a href="{% url 'article:authors' %}">{{ article.title }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -71,9 +71,9 @@
             <div class="column">
                 <b>A propos de DGT</b>
                 <ul>
-                    <li><a href="{% url article:list %}">Index des articles</a></li>
-                    <li><a href="{% url authors:list %}">Auteurs réguliers</a></li>
-                    <li><a href="{% url dicegametech:use %}">Conditions d'utilisation</a></li>
+                    <li><a href="{% url 'article:list' %}">Index des articles</a></li>
+                    <li><a href="{% url 'article:authors_list' %}">Auteurs réguliers</a></li>
+                    <li><a href="{% url 'article:use' %}">Conditions d'utilisation</a></li>
                 </ul>
             </div>
             <div class="column">

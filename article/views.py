@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.http import HttpResponse
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
@@ -11,7 +11,11 @@ class ArticleList(ListView):
     model = Article
 
 def detail(request, article_title):
-    return HttpResponse("You're reading article %s." % article_title)
+    article = get_object_or_404(Article, title=article_title)
+    context = {
+        'article': article,
+    }
+    return render(request, 'articles/article.html', context)
 
 def list(request):
     return HttpResponse("You're looking at the article list")
