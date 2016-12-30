@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils.translation import ugettext as _
 
-class ArticleEntry(models.Model):
+class Article(models.Model):
 
     UPLOAD_TO = 'uploads/articles/thumbnail/'
 
@@ -16,6 +16,12 @@ class ArticleEntry(models.Model):
     create_date = models.DateTimeField(auto_now_add=True) 
     update_date = models.DateTimeField(auto_now=True)
 
-    pub_date    = models.DateTimeField(blank=True, null=True)
+    pub_date = models.DateTimeField(blank=True, null=True)
 
     contents = models.TextField(verbose_name=_('contents')) 
+
+
+class User(models.Model):
+   
+    firstname = models.CharField(max_length=256, verbose_name=_('firstname'))
+    lastname  = models.CharField(max_length=256, verbose_name=_('lastname'))
