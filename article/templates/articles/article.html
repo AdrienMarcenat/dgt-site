@@ -4,12 +4,12 @@
 {% block title %} DGT | {{article.title }} {% endblock %}
 
 {% block referencement %}
-    <meta name="authors" content="{{ article.authors.user.lastname }}" />
+<meta name="authors" content="{% for author in article.authors.all %} {{ author.lastname }} {% endfor %}" />
     <meta name="description" content="{{ article.contents }}" />
 {%endblock %}	
 
 {% block css %}
-    <link href="{% static 'css/article.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'article/css/article.css' %}" rel="stylesheet" type="text/css" />
 {% endblock %}
 
 {% block content %}
@@ -18,7 +18,11 @@
         <h2>{{ article.subtitle }}</h2>
 
         <div class="meta">
-            Par <a href="{% url 'authorProfile:list' %}">{{ article.authors.user.firstname }} {{ article.authors.user.lastname }}</a> | le {{ article.pub_date }}
+            Par <a href="{% url 'authorProfile:list' %}">
+                {% for author in article.authors.all %}
+                {{ author.firstname }} {{ author.lastname }}
+                {% endfor %}
+            </a> | le {{ article.pub_date }}
         </div>
 
         <div id="article_slug">
