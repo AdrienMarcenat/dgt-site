@@ -13,14 +13,26 @@
 
 {% block content %}
 
+<div id="left_column">
+    <h1>Liste des articles publiés</h1>
     <div id="article_list">
-        <h1>Liste des articles publiés</h1>
-
         <ul>
             {% for article in article_list %}
             <li><a href="{% url 'article:detail' article.title %}">{{ article.title }}</a></li>
             {% endfor %}
         </ul>
     </div>
+</div>
+
+<div id="right_column"> 
+    <h2>Archives</h2>
+    <div id="archives">
+        <ul>
+            {% for article in article_list %}
+            <li><a href="{% url 'article:detail' article.title %}">{{ article.title }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
 
 {% endblock %}

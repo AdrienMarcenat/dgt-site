@@ -20,4 +20,8 @@ def detail(request, article_title):
     return render(request, 'articles/article.html', context)
 
 def list(request):
-    return HttpResponse("You're looking at the article list")
+    article_list = Article.objects.all()
+    context = {
+        'article_list': article_list
+    }
+    return render(request, 'articles/article_list.html', context)
