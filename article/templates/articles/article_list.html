@@ -1,65 +1,26 @@
+{% extends "base.html" %}
 {% load static %}
 
-<head>	
-	
-	<!--Page Title-->		
-    <title>DGT | Liste des articles</title>
+{% block title %} DGT | Liste des articles{% endblock %}
 
-	<!--Referencement-->
-	<meta name="robots" content="all" />
-	<meta name="keywords" content="DiceGameTech, game-design, game design, tutoriaux, cours, création, conception, jeu-video, jeu, jeux-videos, jeux, video, level design, blog" />
+{% block referencement %}
     <meta name="description" content="Liste des articles de DGT" />
-	<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
-				
-    <link href="{% static css/article.css %}" rel="stylesheet" type="text/css" />
-		
-</head>	
+{% endblock %}	
 
-<body>
-	<div id="main">
+{% block css %}
+    <link href="{% static 'article/css/article_list.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}	
 
-		<div id="banner">
-			<div class="centered">
-					
-				<img src="{% static img/banner.png %}" alt="DiceGameTech" usemap="#logomap" />
-					
-				<map name="logomap"><area shape="rect" coords="0,0,400,100" alt="DiceGameTech" href="/" /></map>
-				
-            </div>
-        </div>
+{% block content %}
 
-        <div id="article_list">
-            <div class="lightboxable">
-                <h1>Liste des articles publiés</h1>
+    <div id="article_list">
+        <h1>Liste des articles publiés</h1>
 
-                <ul>
-                    {% for article in article_list %}
-                    <li><a href="{% url article:index %}">{{ article.title }}</a></li>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            <div id="footer">
-
-                <div class="content">
-                    <div class="column">
-                        <b>A propos de DGT</b>
-                        <ul>
-                            <li><a href="{% url article:list %}">Index des articles</a></li>
-                            <li><a href="{% url authors:list %}">Auteurs réguliers</a></li>
-                            <li><a href="{% url dicegametech:use %}">Conditions d'utilisation</a></li>
-
-                        </ul>
-                    </div>
-                    <div class="column">
-                        <b>Contact</b>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-
+        <ul>
+            {% for article in article_list %}
+            <li><a href="{% url 'article:detail' article.title %}">{{ article.title }}</a></li>
+            {% endfor %}
+        </ul>
     </div>
 
-</body>
+{% endblock %}

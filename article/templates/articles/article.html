@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %} DGT | {{article.title }} {% endblock %}
+{% block title %} DGT | {{ article.title }} {% endblock %}
 
 {% block referencement %}
 <meta name="authors" content="{% for author in article.authors.all %} {{ author.lastname }} {% endfor %}" />
