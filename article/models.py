@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils.translation import ugettext as _
 
+from tinymce.widgets import TinyMCE
+
 class Article(models.Model):
 
     UPLOAD_TO = 'uploads/articles/thumbnail/'
@@ -31,4 +33,3 @@ class User(models.Model):
 
     def __str__(self):
         return self.firstname + self.lastname
-
