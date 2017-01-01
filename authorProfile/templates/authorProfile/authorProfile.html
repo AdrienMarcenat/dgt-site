@@ -34,7 +34,7 @@
                 {% for authorProfile in authorProfile_list %}
                 
                 <div id="author">
-                    <h2>{{ authorProfile.firstname }} {{ authorProfile.lastname }}</h2>
+                    <h2>{{ authorProfile.user.firstname }} {{ authorProfile.user.lastname }}</h2>
 
                     <p>{{ authorProfile.description }}</p>
                 </div>
@@ -47,7 +47,7 @@
                 <div id="archives">
                     <ul>
                         {% for article in article_list %}
-                        <li><a href="{% url 'article:detail' %}">{{ article.title }}</a></li>
+                        <li><a href="{% url 'article:detail' article.title %}">{{ article.title }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>

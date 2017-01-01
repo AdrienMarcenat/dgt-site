@@ -16,7 +16,10 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 
+app_name = 'article'
+app_name = 'authorProfile'
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^article/', include('article.urls')) 
+    url(r'^article/', include('article.urls')), 
+    url(r'^authorProfile/', include('authorProfile.urls')) ,
 ]

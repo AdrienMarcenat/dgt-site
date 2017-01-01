@@ -12,8 +12,10 @@ class ArticleList(ListView):
 
 def detail(request, article_title):
     article = get_object_or_404(Article, title=article_title)
+    article_list = Article.objects.all()
     context = {
         'article': article,
+        'article_list': article_list
     }
     return render(request, 'articles/article.html', context)
 

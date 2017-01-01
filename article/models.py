@@ -25,9 +25,10 @@ class Article(models.Model):
 
 
 class User(models.Model):
-   
+
     firstname = models.CharField(max_length=256, verbose_name=_('firstname'))
-    lastname  = models.CharField(max_length=256, verbose_name=_('lastname'))
-    
+    lastname = models.CharField(max_length=256, verbose_name=_('lastname'))
+
     def __str__(self):
-        return self.lastname
+        return self.firstname + self.lastname
+

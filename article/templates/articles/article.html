@@ -35,7 +35,7 @@
                 <h2>{{ article.subtitle }}</h2>
 
                 <div class="meta">
-                    Par <a href="/article/auteurs">{{ article.authors }}</a> | le {{ article.pub_date }}	
+                    Par <a href="/article/auteurs">{{ article.author.user.firstname }} {{ article.author.user.lastname }}</a> | le {{ article.pub_date }}	
                 </div>
 
                 <div id="article_slug">
@@ -57,7 +57,7 @@
                 <div id="archives">
                     <ul>
                         {% for article in article_list %}
-                        <li><a href="{% url 'article:authors' %}">{{ article.title }}</a></li>
+                        <li><a href="{% url 'article:detail' article.title %}">{{ article.title }}</a></li>
                         {% endfor %}
                     </ul>
                 </div>
@@ -72,7 +72,7 @@
                 <b>A propos de DGT</b>
                 <ul>
                     <li><a href="{% url 'article:list' %}">Index des articles</a></li>
-                    <li><a href="{% url 'article:authors_list' %}">Auteurs réguliers</a></li>
+                    <li><a href="{% url 'authorProfile:list' %}">Auteurs réguliers</a></li>
                     <li><a href="{% url 'article:use' %}">Conditions d'utilisation</a></li>
                 </ul>
             </div>
