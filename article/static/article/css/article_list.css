@@ -1,0 +1,7 @@
+#article_list ul {
+    list-style: none;
+}
+#article_list a {
+    color: #333333;
+    text-decoration: none;
+}
