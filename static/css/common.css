@@ -7,20 +7,13 @@ body {
   color: white;
 }
 #banner {
-  float: right;
-  position: relative;
-  left: -50%;
+  width: 60%;
+  margin: auto;
   font-size: 0em;
   line-height: 0%;
 }
-#banner .centered {
-  float: left;
-  width: 60%;
-  height: 20%;
-  position: relative;
-  left: 50%;
-}
 #content {
+  clear: both;
   width: 60%;
   height: 100%;
   margin: auto;

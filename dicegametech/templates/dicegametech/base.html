@@ -13,6 +13,7 @@
     {% endblock %}
 	<meta http-equiv="content-type"  content="text/html; charset=UTF-8" />
 
+    <!-- css-->
     <link href="{% static 'css/common.css' %}" rel="stylesheet" type="text/css" />
     {% block css %}{% endblock %}
 		
@@ -22,13 +23,11 @@
 	<div id="main">
 
 		<div id="banner">
-			<div class="centered">
 					
-				<img src="{% static 'img/banner' %}"  alt="DiceGameTech" usemap="#logomap" />
+				<img src="{% static 'img/banner.png' %}"  alt="DiceGameTech" usemap="#logomap" />
 					
 				<map name="logomap"><area shape="rect" coords="0,0,400,100" alt="DiceGameTech" href="/" /></map>
 				
-            </div>
         </div>
 
         <div id="content">
