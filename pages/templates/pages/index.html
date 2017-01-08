@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %} DGT | Game Design et Développement {% endblock %}
+
+{% block referencement %}
+    <meta name="description" content="DGT est un site éditant des articles de Game Design et de développement de jeux vidéo" />
+{%endblock %}	
+
+{% block css %}
+    <link href="{% static 'dicegametech/css/index.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block content %}
+
+    <div id="left_column">
+        <div id="article_preview">
+
+                {% for article in article_list %}
+                <div id="preview">
+                    <a href="{% url 'article:detail' article.title %}"><h2>{{ article.title }}</h2></a></li>
+                    <span class="read_more">
+                        Lire <a href="{% url 'article:detail' article.title %}">la suite</a>
+                    </span>	
+                </div>
+                {% endfor %}
+
+        </div>
+    </div>
+
+    <div id="right_column"> 
+        <h2>Archives</h2>
+        <div id="archives">
+            <ul>
+                {% for article in article_list %}
+                <li><a href="{% url 'article:detail' article.title %}">{{ article.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+

@@ -23,4 +23,5 @@ urlpatterns = [
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^article/', include('article.urls')), 
     url(r'^authorProfile/', include('authorProfile.urls')) ,
+    url(r'', include('pages.urls')), 
 ]

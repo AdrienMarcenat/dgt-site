@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load extra_article %}
 
 {% block title %} DGT | {{ article.title }} {% endblock %}
 
@@ -30,7 +31,7 @@
         </div>
 
         <div id="article_content">
-            <p>{{ article.contents }}</p>
+                {{ article.contents | markdownify | safe }}
         </div>
 
         <div id="article_comments">
