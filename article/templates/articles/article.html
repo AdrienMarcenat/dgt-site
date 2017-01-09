@@ -4,11 +4,6 @@
 
 {% block title %} DGT | {{ article.title }} {% endblock %}
 
-{% block referencement %}
-<meta name="authors" content="{% for author in article.authors.all %} {{ author.lastname }} {% endfor %}" />
-    <meta name="description" content="{{ article.contents }}" />
-{%endblock %}	
-
 {% block css %}
     <link href="{% static 'article/css/article.css' %}" rel="stylesheet" type="text/css" />
 {% endblock %}
@@ -41,13 +36,6 @@
     </div>
 
     <div id="right_column"> 
-        <h2>Archives</h2>
-        <div id="archives">
-            <ul>
-                {% for article in article_list %}
-                <li><a href="{% url 'article:detail' article.title %}">{{ article.title }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
+        
     </div>
 {% endblock %}

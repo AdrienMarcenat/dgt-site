@@ -3,10 +3,6 @@
 
 {% block title %} DGT | Game Design et Développement {% endblock %}
 
-{% block referencement %}
-    <meta name="description" content="DGT est un site éditant des articles de Game Design et de développement de jeux vidéo" />
-{%endblock %}	
-
 {% block css %}
     <link href="{% static 'dicegametech/css/index.css' %}" rel="stylesheet" type="text/css" />
 {% endblock %}
@@ -29,14 +25,7 @@
     </div>
 
     <div id="right_column"> 
-        <h2>Archives</h2>
-        <div id="archives">
-            <ul>
-                {% for article in article_list %}
-                <li><a href="{% url 'article:detail' article.title %}">{{ article.title }}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
+       
     </div>
 
 {% endblock %}

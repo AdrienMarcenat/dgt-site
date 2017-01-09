@@ -3,8 +3,14 @@
 body {
   font-family: Cambria, Georgia, "Times New Roman", Times, serif;
   line-height: 150%;
-  background-color: black;
+  background-color: #222;
   color: white;
+}
+
+/* Change the link color on hover */
+li a:hover {
+    background-color: #555;
+    color: white;
 }
 #banner {
   width: 60%;
@@ -48,39 +54,9 @@ a img {
   border: none;
 }
 
-/*Navigation*/
-#right_column {
-  float: right;
-  width: 30%;
-}
-#right_column h2 {
-  font-family: 'Museo300', Verdana;
-  color: purple;
-}
-#archives {
-  margin-top: 12px;
-}
-#archives > ul > li > a {
-  color: #333333;
-  text-decoration: none;
-}
-#archives > ul > li > a:hover {
-  color: #1F8CE9;
-}
-#archives ul {
-  margin-top: 0px;
-  padding-left: 24px;
-  list-style: none;
-}
-#archives ul ul {
-  padding-left: 12px;
-}
-#archives ul li ul {
-  display: none;
-}
+/* Columns*/
 #left_column {
   float: left;
-  width: 70%;
   overflow: hidden;
   margin-bottom: 120px;
 }
@@ -89,32 +65,12 @@ a img {
   margin-left: -12px;
   margin-right: -12px;
 }
-#left_column img {
-  padding: 12px;
-  border: 1px solid #cacaca;
-  margin-left: 12px;
-  margin-right: 12px;
-  max-width: 594px;
-  box-shadow: 0 2px 5px #dddddd;
-  -moz-box-shadow: 0 2px 5px #dddddd;
-  -webkit-box-shadow: 0 2px 5px #dddddd;
-}
-#left_column blockquote {
-  font-style: italic;
-  border-left: 2px solid #cacaca;
-  margin-left: 24px;
-  padding-left: 24px;
-}
 #left_column p {
   margin-top: 24px;
   margin-bottom: 24px;
 }
 #left_column ul {
   list-style-type: circle;
-}
-#left_column li img {
-  margin-top: 24px;
-  margin-bottom: 24px;
 }
 
 /*Footer*/
