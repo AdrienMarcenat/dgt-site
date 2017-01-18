@@ -1,27 +1,29 @@
 {% load pages_extras %}
 
-<nav class="navbar navbar-default navbar-fixed-top" id="topbar">
+<nav class="navbar navbar-inverse navbar-default navbar-fixed-top" id="topbar">
     <div class="container-fluid">
         <ul class="nav navbar-nav">
-            <li class="navbar-item"> <a class="{% navactive request 'pages:index' %}"
-                                        href="/">Accueil</a>
+            <li class="navbar-item {% navactive request 'pages:index' %}">
+                <a href="/">Accueil</a>
             </li>
 
-            <li class="navbar-item"><a class="{% navactive request 'article:list' %}"
-                                       href="{% url 'article:list' %}">Game Design</a>
+            <li class="navbar-item {% navactive request 'article:list' %}">
+                <a href="{% url 'article:list' %}">Game Design</a>
             </li>
 
-            <li class="navbar-item"><a class="{% navactive request 'article:list' %}"
-                                       href="{% url 'article:list' %}">Développement</a>
+            <li class="navbar-item {% navactive request 'article:list' %}">
+                <a href="{% url 'article:list' %}">Développement</a>
             </li>
 
-            <li class="navbar-item"><a class="{% navactive request 'article:list' %}"
-                                       href="{% url 'article:list' %}">Musique</a>
+            <li class="navbar-item {% navactive request 'article:list' %}">
+                <a href="{% url 'article:list' %}">Musique</a>
             </li>
 
-            <li class="navbar-item"><a class="{% navactive request 'article:list' %}"
-                                       href="{% url 'article:list' %}">Archives</a> 
+            <li class="navbar-item {% navactive request 'article:list' %}">
+                <a href="{% url 'article:list' %}">Archives</a> 
             </li>
         </ul>
     </div>
 </nav>
+
+

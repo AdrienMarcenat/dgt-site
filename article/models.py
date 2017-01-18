@@ -1,11 +1,12 @@
 from django.db import models
 from django.utils.translation import ugettext as _
 
-from tinymce.widgets import TinyMCE
 
 class Article(models.Model):
 
     UPLOAD_TO = 'uploads/articles/thumbnail/'
+
+    tag = models.ManyToManyField('Tag', verbose_name=_('tags'))
 
     authors  = models.ManyToManyField('User', verbose_name=_('authors'))
     title    = models.CharField(max_length=256, verbose_name=_('title'))
@@ -33,3 +34,11 @@ class User(models.Model):
 
     def __str__(self):
         return self.firstname + self.lastname
+
+
+class Tag(models.Model):
+
+    tag = models.CharField(max_length=256, verbose_name=_('tag'));
+
+    def __str__(self):
+        return self.tag;
