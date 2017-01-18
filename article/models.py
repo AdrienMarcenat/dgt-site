@@ -6,7 +6,7 @@ class Article(models.Model):
 
     UPLOAD_TO = 'uploads/articles/thumbnail/'
 
-    tag = models.ManyToManyField('Tag', verbose_name=_('tags'))
+    tags = models.ManyToManyField('Tag', verbose_name=_('tags'))
 
     authors  = models.ManyToManyField('User', verbose_name=_('authors'))
     title    = models.CharField(max_length=256, verbose_name=_('title'))

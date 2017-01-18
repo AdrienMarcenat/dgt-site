@@ -18,7 +18,10 @@
                 {% for author in article.authors.all %}
                 {{ author.firstname }} {{ author.lastname }}
                 {% endfor %}
-            </a> | le {{ article.pub_date }}
+            </a> | le {{ article.pub_date }} | 
+                {% for tag in article.tags.all %}
+                {{ tag.tag }}
+                {% endfor %}
         </div>
 
         <div id="article_slug">
