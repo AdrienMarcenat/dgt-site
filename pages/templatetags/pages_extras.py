@@ -14,3 +14,9 @@ def navactiveWord(request, word):
     if word in request.path:
         return "active"
     return ""
+ 
+@register.simple_tag
+def url_tag(request, word):
+    if word in request.path:
+        return "active"
+    return ""

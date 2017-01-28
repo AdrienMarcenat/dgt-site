@@ -14,14 +14,14 @@
         <h2>{{ article.subtitle }}</h2>
 
         <div class="meta">
-            Par <a href="{% url 'authorProfile:list' %}">
-                {% for author in article.authors.all %}
-                {{ author.firstname }} {{ author.lastname }}
-                {% endfor %}
-            </a> | le {{ article.pub_date }} | 
-                {% for tag in article.tags.all %}
+            Par 
+            {% for author in article.authors.all %}
+                <a href="{% url 'authorProfile:list' %}">{{ author.firstname }} {{ author.lastname }}</a>
+            {% endfor %}
+             | le {{ article.pub_date }} | 
+            {% for tag in article.tags.all %}
                 {{ tag.tag }}
-                {% endfor %}
+            {% endfor %}
         </div>
 
         <div id="article_slug">
@@ -33,12 +33,8 @@
         </div>
 
         <div id="article_comments">
-            <h1>Ajouter un commentaire</h1>
         </div>
 
     </div>
 
-    <div id="right_column"> 
-        
-    </div>
 {% endblock %}

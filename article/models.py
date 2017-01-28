@@ -8,10 +8,10 @@ class Article(models.Model):
 
     tags = models.ManyToManyField('Tag', verbose_name=_('tags'))
 
-    authors  = models.ManyToManyField('User', verbose_name=_('authors'))
+    authors  = models.ManyToManyField('User'  , verbose_name=_('authors'))
     title    = models.CharField(max_length=256, verbose_name=_('title'))
     subtitle = models.CharField(max_length=256, verbose_name=_('subtitle'))
-    slug     = models.SlugField(max_length=80, verbose_name=_('slug'))
+    slug     = models.SlugField(max_length=80 , verbose_name=_('slug'))
     
     thumbnail = models.ImageField(upload_to=UPLOAD_TO, null=True, 
             blank=True, verbose_name = _('thumbnail'))
