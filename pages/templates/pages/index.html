@@ -14,9 +14,9 @@
 
                 {% for article in article_list %}
                 <div id="preview">
-                    <a href="{% url 'article:detail' article.title %}"><h2>{{ article.title }}</h2></a></li>
+                    <a href="{% url 'article:gameDesignArticle' article.title %}"><h2>{{ article.title }}</h2></a></li>
                     <span class="read_more">
-                        Lire <a href="{% url 'article:detail' article.title %}">la suite</a>
+                        Lire <a href="{% url 'article:gameDesignArticle' article.title %}">la suite</a>
                     </span>	
                 </div>
                 {% endfor %}
