@@ -1,29 +1,53 @@
 {% load pages_extras %}
 
-<nav class="navbar navbar-inverse navbar-default navbar-fixed-top" id="topbar">
+<nav class="navbar-wrapper">
     <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            <li class="navbar-item {% navactive request 'pages:index' %}">
-                <a href="/">Accueil</a>
-            </li>
+        <nav class="navbar navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Logo</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul id="menu" class="nav navbar-nav">
+                        <li class="navbar-item {% navactive request 'pages:index' %}">
+                            <a href="/">Accueil</a>
+                        </li>
 
-            <li class="navbar-item {% navactive request 'article:GameDesign' %}">
-                <a href="{% url 'article:GameDesign' %}">Game Design</a>
-            </li>
+                        <li class="navbar-item {% navactive request 'article:GameDesign' %}">
+                            <a href="{% url 'article:GameDesign' %}">Game Design</a>
+                        </li>
 
-            <li class="navbar-item {% navactive request 'article:Developpement' %}">
-                <a href="{% url 'article:Developpement' %}">Développement</a>
-            </li>
+                        <li class="navbar-item {% navactive request 'article:Developpement' %}">
+                            <a href="{% url 'article:Developpement' %}">Développement</a>
+                        </li>
 
-            <li class="navbar-item {% navactive request 'article:Musique' %}">
-                <a href="{% url 'article:Musique' %}">Musique</a>
-            </li>
+                        <li class="navbar-item {% navactive request 'article:Musique' %}">
+                            <a href="{% url 'article:Musique' %}">Musique</a>
+                        </li>
 
-            <li class="navbar-item {% navactive request 'article:Archives' %}">
-                <a href="{% url 'article:Archives' %}">Archives</a> 
-            </li>
-        </ul>
+                        <li class="navbar-item {% navactive request 'article:Archives' %}">
+                            <a href="{% url 'article:Archives' %}">Archives</a> 
+                        </li>
+
+                        <li class=" dropdown">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Departments <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class=" dropdown">
+                                    <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View Departments</a>
+                                </li>
+                                <li><a href="#">Add New</a></li>
+                            </ul>
+                        </li>
+                      
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
-</nav>
-
-
+</div>

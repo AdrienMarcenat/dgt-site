@@ -7,26 +7,77 @@ body {
   color: white;
 }
 
-#topbar {
-    width: 60%;
-    margin: auto;
+/* navbar */
+.navbar, .dropdown-menu{
+background:rgba(100,100,100,0.90);
+border: none;
 }
 
-/* Change the link color on hover */
+#navbar {
+    width: 60%;
+    margin-left: 15%;
+    font-size: 120%;
+}
+
+.nav>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .dropdown-menu>li>a, .dropdown-menu>li{
+  border-bottom: 3px solid transparent;
+}
+.nav>li>a:focus, .nav>li>a:hover,.nav .open>a, .nav .open>a:focus, .nav .open>a:hover, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover{
+  border-bottom: 3px solid transparent;
+  background: none;
+}
+.navbar a, .dropdown-menu>li>a, .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover, .navbar-toggle{
+ color: #fff;
+}
+.dropdown-menu{
+      -webkit-box-shadow: none;
+    box-shadow:none;
+}
+
+.nav li:hover:nth-child(8n+1), .nav li.active:nth-child(8n+1){
+  border-bottom: #C4E17F 3px solid;
+}
+.nav li:hover:nth-child(8n+2), .nav li.active:nth-child(8n+2){
+  border-bottom: #F7FDCA 3px solid;
+}
+.nav li:hover:nth-child(8n+3), .nav li.active:nth-child(8n+3){
+  border-bottom: #FECF71 3px solid;
+}
+.nav li:hover:nth-child(8n+4), .nav li.active:nth-child(8n+4){
+  border-bottom: #F0776C 3px solid;
+}
+.nav li:hover:nth-child(8n+5), .nav li.active:nth-child(8n+5){
+  border-bottom: #DB9DBE 3px solid;
+}
+.nav li:hover:nth-child(8n+6), .nav li.active:nth-child(8n+6){
+  border-bottom: #C49CDE 3px solid;
+}
+.nav li:hover:nth-child(8n+7), .nav li.active:nth-child(8n+7){
+  border-bottom: #669AE1 3px solid;
+}
+.nav li:hover:nth-child(8n+8), .nav li.active:nth-child(8n+8){
+  border-bottom: #62C2E4 3px solid;
+}
+
+.navbar-toggle .icon-bar{
+    color: #fff;
+    background: #fff;
+}
+
+/* content */
 li a:hover {
     background-color: #555;
     color: white;
 }
 #banner {
-  width: 60%;
+  height: 10% ;
+  width : 60% ;
   margin: auto;
-  font-size: 0em;
-  line-height: 0%;
 }
 #content {
-  clear: both;
   width: 60%;
-  height: 100%;
+  height: auto;
+  overflow: auto;
   margin: auto;
   padding-left: 18px;
   padding-right: 18px;
@@ -34,6 +85,8 @@ li a:hover {
   border-left: 1px solid #cacaca;
   border-right: 1px solid #cacaca;
   box-shadow: 0px 0px 5px #aaaaaa;
+  text-align: justify;
+  text-decoration: none;
 }
 h1 {
   font-size: 2em;
