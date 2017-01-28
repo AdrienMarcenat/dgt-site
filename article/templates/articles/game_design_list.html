@@ -1,11 +1,19 @@
 {% extends "article_list.html" %} 
 
+{%block title %} DGT | Game Design {% endblock %}
+
 {% block list %}
 
-{% for article in article_list %}
-<li>
-    <a href="{% url 'article:gameDesignArticle' article.title %}">{{ article.title }}</a>
-</li>
-{% endfor %}
+<h1>Liste des articles de Game Design</h1>
+
+<div id="article_list">
+    <ul>
+        {% for article in article_list %}
+        <li>
+            <a href="{% url 'article:gameDesignArticle' article.title %}">{{ article.title }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
 
 {% endblock %}
