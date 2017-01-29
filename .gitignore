@@ -1,8 +1,6 @@
 settings.py
 db.sqlite3
 __pycache__
-migrations
 bin/
 include/
 lib/
-*.json
