@@ -15,13 +15,15 @@
 
             {% for article in article_list %}
             <div id="preview">
-                <a href="{% url 'article:gameDesignArticle' article.title %}"><h2>{{ article.title }}</h2></a></li>
-            <div id ="content_beginning">
-                {{ article.contents|markdownify|safe|truncatewords:100 }}
-            </div>
-            <span class="read_more">
-                Lire <a href="{% url 'article:gameDesignArticle' article.title %}">la suite</a>
-            </span>	
+                <a href="{% url 'article:detail' category=article.category.name id=article.id slug=article.slug %}">
+                    <h2>{{ article.title }}</h2>
+                </a>
+                <div id ="content_beginning">
+                    {{ article.contents|markdownify|safe|truncatewords:100 }}
+                </div>
+                <span class="read_more">
+                    Lire <a href="{% url 'article:detail' category=article.category.name id=article.id slug=article.slug %}">la suite</a>
+                </span>	
             </div>
             {% endfor %}
 

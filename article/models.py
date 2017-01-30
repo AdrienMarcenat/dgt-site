@@ -7,7 +7,7 @@ class Article(models.Model):
     UPLOAD_TO = 'uploads/articles/thumbnail/'
 
     tags = models.ManyToManyField('Tag', verbose_name=_('tags'))
-    category = models.ForeignKey('Category', null=True, on_delete=models.CASCADE, verbose_name=_('category'))
+    category = models.ForeignKey('Category', on_delete=models.CASCADE, verbose_name=_('category'))
 
     authors  = models.ManyToManyField('User'  , verbose_name=_('authors'))
     title    = models.CharField(max_length=256, verbose_name=_('title'))
@@ -46,7 +46,7 @@ class Tag(models.Model):
 
 class Category(models.Model):
 
-    name = models.CharField(max_length=256, default="game design", verbose_name=_('category'));
+    name = models.SlugField(max_length=256, default="game design", verbose_name=_('category'));
 
     def __str__(self):
         return self.name;

@@ -1,4 +1,5 @@
 from django import template
+from django.urls import reverse
 import markdown
 
 register = template.Library()

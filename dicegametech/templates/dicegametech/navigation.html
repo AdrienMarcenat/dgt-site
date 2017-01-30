@@ -19,16 +19,16 @@
                             <a href="/">Accueil</a>
                         </li>
 
-                        <li class="navbar-item {% navactiveWord request 'gameDesign' %} ">
-                            <a href="{% url 'article:GameDesign' %}">Game Design</a>
+                        <li class="navbar-item {% navactiveWord request 'game-design' %}">
+                            <a href="{% url 'article:categoryList' category='game-design' %}">Game Design</a>
                         </li>
 
                         <li class="navbar-item {% navactiveWord request 'developpement' %}">
-                            <a href="{% url 'article:Developpement' %}">Développement</a>
+                            <a href="{% url 'article:categoryList' category='developpement'  %}">Développement</a>
                         </li>
 
                         <li class="navbar-item {% navactiveWord request 'musique' %}">
-                            <a href="{% url 'article:Musique' %}">Musique</a>
+                            <a href="{% url 'article:categoryList' category='musique' %}">Musique</a>
                         </li>
 
                         <li class=" dropdown">
