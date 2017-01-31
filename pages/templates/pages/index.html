@@ -14,25 +14,41 @@
         <div id="article_preview">
 
             {% for article in article_list %}
-            <div id="preview">
-                <a href="{% url 'article:detail' category=article.category.name id=article.id slug=article.slug %}">
-                    <h2>{{ article.title }}</h2>
-                </a>
-                <div id ="content_beginning">
-                    {{ article.contents|markdownify|safe|truncatewords:100 }}
+
+            <div class="preview_card">
+                <div class="container">
+                    <div class="column">
+                        <div class="post-module">
+                            <div class="thumbnail">
+                                <div class="date">
+                                    <div class="day">{{ article.pub_date.day }}</div>
+                                    <div class="month">{{ article.pub_date.month }}</div>
+                                </div>
+                                <img src="{{ article.thumbnail.url }}" width=200 height=200 />
+                            </div>
+                            <div class="post-content">
+                                <div class="category">Catégorie: {{ article.category.name }}</div>
+                                <a href="{% url 'article:detail' category=article.category.name id=article.id slug=article.slug %}">
+                                    <h1 class="title">{{ article.title }}</h1>
+                                </a>
+                                <h2 class="sub_title">{{ article.subtitle }}</h2>
+                                <div class="description">
+                                    <p class="description">{{ article.contents|markdownify|safe|truncatewords:100 }}</p>
+                                </div>
+                            </div>
+                            <div class="read_more">
+                                <span>
+                                    Lire <a href="{% url 'article:detail' category=article.category.name id=article.id slug=article.slug %}">la suite</a>
+                                </span>	
+                            </div>
+                        </div>
+                    </div> 
                 </div>
-                <span class="read_more">
-                    Lire <a href="{% url 'article:detail' category=article.category.name id=article.id slug=article.slug %}">la suite</a>
-                </span>	
             </div>
             {% endfor %}
 
         </div>
     </div>
-
-    <div id="right_column"> 
-       
-    </div>
-
+        
 {% endblock %}
 

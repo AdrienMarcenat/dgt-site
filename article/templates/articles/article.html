@@ -24,10 +24,6 @@
             {% endfor %}
         </div>
 
-        <div id="article_slug">
-            <p>{{ article.slug }}</p>
-        </div>
-
         <div id="article_content">
                 {{ article.contents | markdownify | safe }}
         </div>
