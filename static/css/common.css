@@ -282,8 +282,12 @@ a img {
     height: 100%;
     overflow: hidden;
 }
+.preview_card .post-module .thumbnail .image {
+    width: 100%;
+    height: 100%;
+}
 .preview_card .post-module .thumbnail .date {
-    position: inherit;
+    position: absolute;
     top: 20px;
     right: 20px;
     z-index: 1;
@@ -349,9 +353,10 @@ a img {
 } 
 .preview_card .post-module .read_more {
     display: none;
-    clear: right;
+    clear: both;
     position: inherit;
-    bottom: 25px;
+    padding-left: 10px;
+    bottom: 50px;
     background: rgba(5,5,5,0.9);
     font-size: 14px;
 } 
