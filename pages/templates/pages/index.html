@@ -29,6 +29,7 @@
                                     Lire <a href="{% url 'article:detail' category=article.category.name id=article.id slug=article.slug %}">la suite</a>
                                 </span>	
                             </div> 
+
                         </div>
                     </div>
                     <div class="post-content">
@@ -43,7 +44,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="category">Catégorie: {{ article.category.name }}</div>        </div>
+                <div class="category">Catégorie: {{ article.category.name }}</div>
+            </div>
             {% endfor %}
 
         </div>
