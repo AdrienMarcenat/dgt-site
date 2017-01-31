@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from article.models import Article
 
 def index(request):
-    article_list = Article.objects.all()
+    article_list = Article.objects.all().order_by('-pub_date')
     context = {
         'article_list': article_list
     }

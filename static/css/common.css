@@ -5,6 +5,7 @@ body {
     line-height: 150%;
     background-color: #222;
     color: white;
+    text-decoration: none;
 }
 
 /* navbar */
@@ -103,7 +104,7 @@ h2 {
 }
 a {
     border: none;
-    color: purple;
+    color: #cb25f4;
 }
 a:hover {
     color: #1F8CE9;
@@ -117,6 +118,7 @@ a img {
     float: left;
     overflow: hidden;
     margin-bottom: 120px;
+    padding: 1.625em 0 0;
 }
 #left_column .center {
     text-align: center;
@@ -241,32 +243,23 @@ a img {
 /* preview card */
 
 .preview_card {
-    clear: both;
-    padding-top: 20px;
-}
-.preview_card .container {
-    width: 100%;
-    margin: auto;
-}
-.preview_card .container .column {
-    width:100%;
-    -webkti-box-sizing: border-box;
-    -moz-box-sizing: border-box;
+    height: 220px;
+    width : 100%;
+    margin: 0 0 1.625em;
+    padding: 0 0 1.625em;
     box-sizing: border-box;
-    float: left;
     font-family: 'proxima-nova-soft', sans-serif;
     font-size: 14px;
-    -webkit-font-smoothing: antialiased;
 }
 .preview_card .post-module {
+    height: 100%;
+    width: 100%;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction: row;
+    flex-direction: row;
     position: relative;
-    z-index: 1;
-    display: block;
     background: #111111;
-    height: 200px;
-    -webkit-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
-    -moz-box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
-    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.15);
 }
 .preview_card .post-module:hover .thumbnail img,
 .hover .thumbnail img {
@@ -277,10 +270,12 @@ a img {
 }
 .preview_card .post-module .thumbnail {
     width:30%;
-    float: left;
-    background: #000000;
     height: 100%;
+    background: #000000;
     overflow: hidden;
+    padding: 0;
+    border-radius: 0px;
+    border: 0;
 }
 .preview_card .post-module .thumbnail .image {
     width: 100%;
@@ -310,6 +305,7 @@ a img {
 .preview_card .post-module .thumbnail img {
     display: block;
     width: 100%;
+    height: 100%;
     -webkit-transition: all 0.3s linear 0s;
     -moz-transition: all 0.3s linear 0s;
     -ms-transition: all 0.3s linear 0s;
@@ -317,19 +313,11 @@ a img {
     transition: all 0.3s linear 0s;
 }
 .preview_card .post-module .post-content {
-    float: right;
     width:70%;
     height: 100%;
     overflow: hidden;
     line-height: 1em;
     background: rgb(10,10,10);
-}
-.preview_card .post-module .post-content .category {
-    background: #5f5f5f;
-    padding: 5px 15px;
-    color: #FFFFFF;
-    font-size: 14px;
-    font-weight: 600;
 }
 .preview_card .post-module .post-content .title {
     padding: 0 10px 5px;
@@ -337,29 +325,47 @@ a img {
     font-size: 18px;
     font-weight: 700;
 }
+.preview_card .post-module .post-content .title a {
+    text-decoration: none;
+    color: #aaaaaa;
+}
+.preview_card .post-module .post-content .title a:hover {
+    text-decoration: none;
+    color: #1F8CE9;
+}
 .preview_card .post-module .post-content .sub_title {
     margin: 0;
     padding: 0 10px 0px;
-    color: purple;
+    color: #cb25f4;
     font-size: 14px;
     font-weight: 400;
 }
 .preview_card .post-module .post-content .description {
     margin: auto;
-    padding-left: 10px;;
+    padding-left: 10px;
+    padding-right: 10px;
     color: #FFFFFF;
     font-size: 14px;
     line-height: 1.2em;
 } 
-.preview_card .post-module .read_more {
-    display: none;
-    clear: both;
-    position: inherit;
+.preview_card .category {
     padding-left: 10px;
-    bottom: 50px;
+    background: #5f5f5f;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+}
+.preview_card .read_more {
+    width: 30%;
+    display: none;
+    z-index: 1;
+    position: absolute;
+    text-align: center;
+    bottom: 25px;
+    left: 0px;
     background: rgba(5,5,5,0.9);
     font-size: 14px;
 } 
-.preview_card .post-module:hover .read_more {
+.preview_card:hover .read_more {
     display: block;
 } 
