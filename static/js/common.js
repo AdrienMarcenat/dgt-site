@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $(window).scroll(function () {
-        if ($(this).scrollTop() > 50) {
+        if ($(this).scrollTop() > 100) {
             $('#back-to-top').fadeIn();
         } else {
             $('#back-to-top').fadeOut();
@@ -15,7 +15,6 @@ $(document).ready(function(){
         return false;
     });
 
-    $('#back-to-top').tooltip('show');
 
 });
 
@@ -24,12 +23,27 @@ $(document).ready(function(){
         // fade in .navbar
         $(function () {
             $(window).scroll(function () {
-
                 // set distance user needs to scroll before we start fadeOut
                 if ($(this).scrollTop() > 300) {
                     $('.navbar').fadeOut();
                 } else {
                     $('.navbar').fadeIn();
+                }
+            });
+        });
+    });
+}(jQuery));
+
+(function ($) {
+    $(document).ready(function() {
+        // fade in .search-field
+        $(function () {
+            $(window).scroll(function () {
+                // set distance user needs to scroll before we start fadeIn
+                if ($(this).scrollTop() > 100) {
+                    $('#search-field').fadeIn();
+                } else {
+                    $('#search-field').fadeOut();
                 }
             });
         });
