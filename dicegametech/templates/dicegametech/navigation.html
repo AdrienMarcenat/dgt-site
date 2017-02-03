@@ -32,16 +32,15 @@
                             <a href="{% url 'article:categoryList' category='musique' %}">Musique</a>
                         </li>
 
-                        <li class=" dropdown">
-                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Departments <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li class=" dropdown">
-                                    <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">View Departments</a>
-                                </li>
-                                <li><a href="#">Add New</a></li>
-                            </ul>
+                        <li class="navbar-item">
+                            <form id="nav-search" action="" class="search-form">
+                                <div class="form-group has-feedback">
+                                    <input type="text" class="form-control" name="search" id="nav-search" placeholder="Search">
+                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                            </form>
+                                </div>
                         </li>
-                      
+
                     </ul>
                 </div>
             </div>
