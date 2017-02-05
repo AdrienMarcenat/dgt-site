@@ -33,12 +33,12 @@
                         </li>
 
                         <li class="navbar-item">
-                            <form id="nav-search" action="" class="search-form">
+                            <form id="nav-search" action="{% url 'pages:search' %}" method="post" class="search-form">{% csrf_token %}
                                 <div class="form-group has-feedback">
-                                    <input type="text" class="form-control" name="search" id="nav-search" placeholder="Search">
+                                    <input type="text" class="form-control" name="search" placeholder="Search">
                                     <span class="glyphicon glyphicon-search form-control-feedback"></span>
-                            </form>
                                 </div>
+                            </form>
                         </li>
 
                     </ul>

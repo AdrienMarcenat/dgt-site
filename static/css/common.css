@@ -128,6 +128,7 @@ a img {
     float        :        left;
     overflow     :      hidden;
     margin-bottom:       120px;
+    width        : 100%;
 }
 #left_column .center {
     text-align  : center;
