@@ -1,7 +1,15 @@
 #article_list ul {
     list-style: none;
 }
+#article_list {
+    margin-top: 40px;
+    font-size: 1.3em;
+}
 #article_list a {
-    color: #333333;
+    color: #aaaaaa;
+    text-decoration: none;
+}
+#article_list a:hover {
+    color: #1F8CE9;
     text-decoration: none;
 }

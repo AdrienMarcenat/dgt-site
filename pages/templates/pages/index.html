@@ -13,6 +13,9 @@
     <div id="left_column">
         <div id="article_preview">
 
+            {% if search_input and article_list %}
+                <h2>Résultats pour "{{ search_input }}"</h2>
+            {% endif %}
             {% for article in article_list %}
 
             <div class="preview_card">
@@ -46,6 +49,8 @@
                 </div>
                 <div class="category">Catégorie: {{ article.category.name }}</div>
             </div>
+            {% empty %}
+                <h2>Aucun résultat trouvé pour "{{ search_input }}"</h2>
             {% endfor %}
 
         </div>

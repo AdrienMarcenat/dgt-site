@@ -10,7 +10,11 @@
 {% block content %}
 
 <div id="left_column">
-    <h1>Liste des articles publiés</h1>
+    {% if category %}
+    <h1>Liste des articles publiés dans la catégorie {{ category }}</h1>
+    {% else %}
+    <h1>Archives</h1>
+    {% endif %}
     <div id="article_list">
         <ul>
             {% for article in article_list %}

@@ -12,6 +12,15 @@ def detail(request, category, id, slug):
 def category_list(request, category):
     article_list = Article.objects.filter(category__name=category).order_by('pub_date')
     context = {
-        'article_list': article_list
+        'article_list': article_list,
+        'category': category
+    }
+    return render(request, 'articles/article_list.html', context)
+
+def archives(request):
+    article_list = Article.objects.all().order_by('pub_date')
+    context = {
+        'article_list': article_list,
+        'category': ""
     }
     return render(request, 'articles/article_list.html', context)
