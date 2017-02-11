@@ -13,11 +13,11 @@
     
 {% block content %}
 
-    <div id="left_column">
-        <h1>Auteurs Réguliers de DGT</h1>
+    <div class="article">
+        <h1>Auteurs réguliers de DGT</h1>
         {% for authorProfile in authorProfile_list %}
 
-        <div id="author">
+        <div class="author">
             <h2>{{ authorProfile.user.firstname }} {{ authorProfile.user.lastname }}</h2>
 
             <p>{{ authorProfile.description }}</p>

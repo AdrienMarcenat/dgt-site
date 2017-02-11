@@ -76,19 +76,17 @@ body {
 }
 
 /* content */
-#banner {
+.banner {
     height:  10%;
     width :  60%;
     margin: auto;
 }
-#content {
+.content {
     background     : rgb(50,50,50);
     width          :  60%;
     height         : auto;
     overflow       : auto;
     margin         : auto;
-    padding-left   : 18px;
-    padding-right  : 18px;
     border         : 1px solid #ffffff;
     border-left    : 1px solid #cacaca;
     border-right   : 1px solid #cacaca;
@@ -122,24 +120,28 @@ a img {
     border: none;
 }
 
-/* Columns*/
-#left_column {
-    padding      : 1.625em 0 0;
+/* Article */
+.article {
+    padding        : 10%;
+    padding-top    : 20px;
+    padding-bottom : 0px;
     float        :        left;
     overflow     :      hidden;
     margin-bottom:       120px;
     width        : 100%;
+    line-height  : 1.8em;
+    font-size: 1.1em;
 }
-#left_column .center {
+.article .center {
     text-align  : center;
     margin-left :  -12px;
     margin-right:  -12px;
 }
-#left_column p {
+.article p {
     margin-top   : 24px;
     margin-bottom: 24px;
 }
-#left_column ul {
+.article ul {
     list-style-type: circle;
 }
 
