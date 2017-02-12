@@ -133,7 +133,6 @@ a img {
     font-size: 1.1em;
 }
 .article .center {
-    text-align  : center;
     margin-left :  -12px;
     margin-right:  -12px;
 }
@@ -145,6 +144,11 @@ a img {
     list-style-type: circle;
 }
 
+.author {
+    margin-top: 50px;
+    border-left: 1.5px solid;
+    padding-left: 20px;
+}
 /* back to top button */
 
 #back-to-top-button a {
