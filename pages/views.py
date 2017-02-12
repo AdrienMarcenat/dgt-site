@@ -20,3 +20,10 @@ def search(request):
                 'search_input': search_input
         }
         return render(request, 'pages/index.html', context)
+
+
+def contact(request):
+    context = {
+    }
+    return render(request, 'pages/contact.html', context)
+
