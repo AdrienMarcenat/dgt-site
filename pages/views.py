@@ -4,7 +4,7 @@ from pages.forms import ContactForm
 from django.core.mail import EmailMessage
 from django.template import Context
 from django.template.loader import get_template
-
+from django.contrib import messages
 
 def index(request):
     article_list = Article.objects.all().order_by('-pub_date')
@@ -32,6 +32,7 @@ def contact(request):
         form = form_class(data=request.POST)
 
         if form.is_valid():
+            messages.success(request, 'Email envoyé')
             contact_name = request.POST.get('contact_name', '')
             contact_email = request.POST.get('contact_email', '')
             form_content = request.POST.get('content', '')
@@ -53,4 +54,6 @@ def contact(request):
             )
             email.send()
             return redirect('pages:contact')
+        else:
+            messages.error(request, 'Erreur, email non envoyé')
     return render(request, 'pages/contact.html', {'form': form_class, })
