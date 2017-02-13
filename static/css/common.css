@@ -149,6 +149,10 @@ a img {
     border-left: 1.5px solid;
     padding-left: 20px;
 }
+
+.contact-div input, .contact-div textarea {
+    color: black;
+}
 /* back to top button */
 
 #back-to-top-button a {

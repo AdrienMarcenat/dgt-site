@@ -6,12 +6,16 @@
 {% block content %}
 
 <div class="article">
-    <h1>Nous envoyer un mail</h1>
+    <h1>Nous envoyer un email</h1>
 
     <div class="contact-div">
-        <form class="contact-form" action:"">
-            <input type="text" class="form-control" name="body" placeholder="Taper votre mail ici">
+
+        <form role="form" action="" method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button>
         </form>
+
     </div>
 </div>
 
