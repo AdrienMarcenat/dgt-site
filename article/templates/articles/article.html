@@ -16,7 +16,7 @@
         <div class="meta">
             Par 
             {% for author in article.authors.all %}
-                <a href="{% url 'authorProfile:list' %}">{{ author.firstname }} {{ author.lastname }}</a>
+                <a href="{% url 'authorProfile:list' %}">{{ author.first_name }} {{ author.last_name }}</a>
             {% endfor %}
              | le {{ article.pub_date }} | 
             {% for tag in article.tags.all %}

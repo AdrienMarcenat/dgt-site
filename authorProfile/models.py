@@ -1,12 +1,11 @@
 from django.db import models
 from django.utils.translation import ugettext as _
-
-from article.models import User
+from django.contrib.auth.models import User
 
 class AuthorProfile(models.Model):
-    
-    user = models.ForeignKey('article.User', default="", on_delete=models.CASCADE)
+
+    user = models.ForeignKey(User, verbose_name=_('author'))
     description = models.TextField(verbose_name=_('description'))
-    
+
     def __str__(self):
-        return self.user.firstname + self.user.lastname
+        return self.user.first_name + ' ' + self.user.last_name
